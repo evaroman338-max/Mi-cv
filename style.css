@@ -1,0 +1,153 @@
+/* Plantillas de colores para que sea mas sencillo tener un estilo */
+:root {
+    --fondo-principal: rgb(232, 196, 248);
+    --texto-principal: #181818;
+    --fondo-cajas: #fff;
+    --color-secundario: #bc9bda;
+    --color-oscuro: #6e5b80;
+    --borde: #9b9b9b;
+}
+
+body {
+    background-color: var(--fondo-principal);
+    color: var(--texto-principal);
+    margin: 0;
+    padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--fondo-cajas);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+header {
+    background-color: var(--color-secundario);
+    color: white;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.foto {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #6e5b80;
+}
+
+#boton-idioma {
+    margin-top: 10px;
+    padding: 8px 12px;
+    cursor: pointer;
+    background-color: transparent;
+    color: var(--color-oscuro);
+    border: 1px solid white;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+#boton-idioma:hover {
+    background-color: white;
+    color: var(--color-oscuro);
+}
+
+/* Separa el contenido */
+.cuerpo {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+section {
+    flex: 2; 
+    padding: 35px;
+    border-right: 1px solid var(--borde);
+}
+
+aside {
+    flex: 0.8;
+    padding: 35px;
+    background-color: var(--fondo-cajas);
+}
+
+/* Tipo de letras */
+h1 { margin-top: 0; }
+
+h2 { 
+    color: var(--color-oscuro); 
+    border-bottom: 2px solid var(--borde); 
+    padding-bottom: 5px; 
+}
+
+p { color: var(--color-oscuro); }
+
+.fechas {  
+    color: gray; 
+    margin: -10px 0 10px 0; 
+    font-size: 0.9em; }
+
+
+footer {
+    background-color: var(--fondo-cajas);
+    color: var(--color-oscuro);
+    text-align: center;
+    padding: 10px;
+    font-size: 1.2em;
+    border-top: 1px solid var(--borde);
+}
+
+
+.fa-linkedin {
+    font-size: 1.5em;
+    color: #0077b5;
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 20px;
+}
+
+.fa-linkedin:hover {
+    transform: scale(1.2);
+}
+
+/* Oculta el ingés por defecto hasta darle al botón */
+.en {
+    display: none;
+}
+
+body.idioma-ingles .es {
+    display: none;
+}
+
+body.idioma-ingles .en {
+    display: inline-block; 
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .container {
+        max-width: 95%;
+    }
+
+    .h2 {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .cuerpo {
+        flex-direction: column;
+    }
+
+    .container {
+        width: 95%;
+        height: auto
+    }
+
+    .h2 {
+        font-size: 16px;
+    }
+}
